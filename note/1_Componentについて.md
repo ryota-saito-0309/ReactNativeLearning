@@ -60,3 +60,28 @@ componentの`状態`を表現する物です。
 可変な値をとります。  
 stateを変更する事で、画面が更新されます。  
 → Stateを監視していて、Stateを変更すると、自動的に検知して、画面を更新してくれる。
+
+## Imageコンポーネント
+
+[公式リファレンス](https://reactnative.dev/docs/image)
+
+## flexDirectionについて
+
+縦並び・横並びを指定する
+flexDirection: 'column' → 縦に並ぶ
+flexDirection: 'row' → 横に並ぶ
+
+## alignItemsについて
+
+flexDirectionに対して垂直方向にどう配置するかを指定する。
+
+alignItemsはアイテムの位置を調整する。
+flex-start → 縦並びの場合は、左　横並びの場合は、上
+flex-end   → 縦並びの場合は、右　横並びの場合は、下
+
+## justifyContent
+
+flexDirectionと同じ軸に対してどのように寄せるのかを定義する
+
+space-between → 各コンポーネントの間を均等に開けてくれる。
+space-around → 左右と各コンポーネントの間を均等に開けてくれる。
