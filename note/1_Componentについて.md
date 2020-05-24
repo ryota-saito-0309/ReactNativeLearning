@@ -85,3 +85,14 @@ flexDirectionと同じ軸に対してどのように寄せるのかを定義す�
 
 space-between → 各コンポーネントの間を均等に開けてくれる。
 space-around → 左右と各コンポーネントの間を均等に開けてくれる。
+
+## 参考資料
+
+Imageコンポーネント
+<https://facebook.github.io/react-native/docs/image>
+
+Textコンポーネント
+<https://facebook.github.io/react-native/docs/text>
+
+Lorem Picsum（ダミー画像の表示サービス）
+<https://picsum.photos/>
