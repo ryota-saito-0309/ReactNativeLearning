@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, touchableopacity } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 // Styleは上に記述する流派と下に書く流派がある。
 const styles = StyleSheet.create({
@@ -33,9 +34,9 @@ const styles = StyleSheet.create({
 });
 
 // Functionコンポーネントを用いて実装する
-const ListItem = ({ imageUrl, title, author }) => {
+const ListItem = ({ imageUrl, title, author, onPress }) => {
   return (
-    <View style={styles.itemContainer}>
+    <TouchableOpacity style={styles.itemContainer} onPress={onPress}>
       <View style={styles.leftContainer}>
         {!!imageUrl && (
           <Image
@@ -52,7 +53,7 @@ const ListItem = ({ imageUrl, title, author }) => {
         </Text>
         <Text style={styles.subtext}>{author}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
