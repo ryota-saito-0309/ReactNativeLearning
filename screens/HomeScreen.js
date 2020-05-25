@@ -14,8 +14,7 @@ const styles = StyleSheet.create({
 const URL = `http://newsapi.org/v2/top-headlines?country=jp&apiKey=${Constants.manifest.extra.newsApiKey}`;
 
 // export default function HomeScreen() { // コールバック関数だとexport defaultが一行で書ける。
-export default HomeScreen = (props) => {
-  const { navigation } = props;
+export default HomeScreen = ({ navigation }) => {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
     fetchArticles();
