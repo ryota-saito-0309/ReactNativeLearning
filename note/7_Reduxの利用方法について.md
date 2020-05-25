@@ -45,3 +45,8 @@ React Native Debuggerは起動時に`Port 8081`となっているが、ExpoのPo
 
 ![デバッグ接続](2020-05-25-18-58-40.png)
 上記のような画面が表示されると思いますので、`Debug Remote JS`を選択します。
+
+## React ReduxでもHooksを利用
+
+アクションをディスパッチする方法
+[公式のページ](https://react-redux.js.org/api/hooks)
