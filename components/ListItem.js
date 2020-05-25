@@ -1,14 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, FlatList, SafeAreaView } from 'react-native';
-import ListItem from './components/ListItem';
-import articles from './dummies/articles';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 // Styleは上に記述する流派と下に書く流派がある。
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
   itemContainer: {
     height: 100,
     width: '100%',
@@ -38,16 +32,26 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function App() {
-  const items = articles.map((article, index) => {
-    return (
-      <ListItem
-        imageUrl={article.urlToImage}
-        title={article.title}
-        author={article.author}
-        key={index}
-      />
-    );
-  });
-  return <View style={styles.container}>{items}</View>;
-}
+// Functionコンポーネントを用いて実装する
+const ListItem = ({ imageUrl, title, author }) => {
+  return (
+    <View style={styles.itemContainer}>
+      <View style={styles.leftContainer}>
+        <Image
+          style={styles.imageContainer}
+          source={{
+            uri: imageUrl,
+          }}
+        />
+      </View>
+      <View style={styles.rightContainer}>
+        <Text numberOfLines={3} style={styles.text}>
+          {title}
+        </Text>
+        <Text style={styles.subtext}>{author}</Text>
+      </View>
+    </View>
+  );
+};
+
+export default ListItem;
