@@ -1,13 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, View, FlatList, SafeAreaView } from 'react-native';
+import ListItem from './components/ListItem';
+import articles from './dummies/articles';
 
 // Styleは上に記述する流派と下に書く流派がある。
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   itemContainer: {
     height: 100,
@@ -39,26 +39,29 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
+  const items = articles.map((article, index) => {
+    return (
+      <ListItem
+        imageUrl={article.urlToImage}
+        title={article.title}
+        author={article.author}
+        key={index}
+      />
+    );
+  });
   return (
-    <View style={styles.container}>
-      <View style={styles.itemContainer}>
-        <View style={styles.leftContainer}>
-          <Image
-            style={styles.imageContainer}
-            source={{
-              uri: 'https://picsum.photos/200/200',
-            }}
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={articles}
+        renderItem={({ item }) => (
+          <ListItem
+            imageUrl={item.urlToImage}
+            title={item.title}
+            author={item.author}
           />
-        </View>
-        <View style={styles.rightContainer}>
-          <Text numberOfLines={3} style={styles.text}>
-            Tokyo Manga as Image container link orientation numberOfLines
-            orientation alignItems photos style MyImage koro style=
-            assetBundlePatterns
-          </Text>
-          <Text style={styles.subtext}>React News</Text>
-        </View>
-      </View>
-    </View>
+        )}
+        keyExtractor={(item, index) => index.toString()}
+      />
+    </SafeAreaView>
   );
 }
