@@ -4,6 +4,7 @@ import ListItem from '../components/ListItem';
 import Constants from 'expo-constants';
 import axios from 'axios';
 import Loading from '../components/Loading';
+import { API_KEY } from 'react-native-dotenv';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const URL = `http://newsapi.org/v2/top-headlines?country=jp&apiKey=${Constants.manifest.extra.newsApiKey}`;
+const URL = `http://newsapi.org/v2/top-headlines?country=jp&apiKey=${API_KEY}`;
 
 // export default function HomeScreen() { // コールバック関数だとexport defaultが一行で書ける。
 export default HomeScreen = ({ navigation }) => {

@@ -5,7 +5,7 @@
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/splash-NewsApp.png",
+    "icon": "./assets/splash-NewsAppIcon.png",
     "splash": {
       "image": "./assets/splash-NewsApp.png",
       "resizeMode": "contain",
@@ -16,10 +16,13 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sa110.newsApp",
+      "buildNumber": "1.0.0"
     },
-    "extra": {
-      "newsApiKey": "9b145f0ebde04fa8b5d7f7b960ce665e"
+    "android": {
+      "package": "com.sa110.newsApp",
+      "versionCode": 1
     }
   }
 }
